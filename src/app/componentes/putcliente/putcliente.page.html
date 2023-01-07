@@ -1,0 +1,56 @@
+<ion-header class="ion-no-border" >
+  <ion-toolbar class="background-color">
+    <ion-title class="ion-text-center"><b><i>Editar Cliente</i></b></ion-title>
+    <ion-buttons slot="start">
+      <ion-button href="../cliente">
+        <ion-icon name="chevron-back-outline" class="flecha"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<br>
+
+ <ion-content class="ion-padding">
+
+  <form #formulario="ngForm" (ngSubmit)="guardar()">
+
+  <ion-card>
+
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.Nombre" name="Nombre" [clearInput]="true" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Apellidos</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.Apellidos" name="Apellidos" [clearInput]="true" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Telefono</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.Telefono" name="Telefono" [clearInput]="true" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Direccion</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.Direccion" name="Direccion" [clearInput]="true" required></ion-input>
+    </ion-item>
+
+  </ion-card>
+
+    <br>
+
+<ion-button type="submit" expand="block" class="colores" [disabled]="formulario.invalid">
+  Guardar Cambios
+</ion-button>
+
+  </form>
+  
+ </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="txt">Brenda Azucena</ion-title>
+  </ion-toolbar>
+</ion-footer>

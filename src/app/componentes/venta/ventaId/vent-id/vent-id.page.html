@@ -1,0 +1,37 @@
+<ion-header class="ion-no-border" >
+  <ion-toolbar class="background-color">
+    <ion-title class="ion-text-center"><b><i>Venta</i></b></ion-title>
+    <ion-buttons slot="start">
+      <ion-button href="../venta">
+        <ion-icon name="chevron-back-outline" class="flecha"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="venta">
+<br>
+<ion-card>
+  
+  <ion-item>
+  <h3 >{{ venta.Cantidad}}</h3>
+  </ion-item>
+  <br>
+  <ion-item>
+    <h3>{{ venta.factura_Id }}</h3>
+  </ion-item>
+ 
+</ion-card>
+
+<br>
+
+<div class="ion-padding">
+  <ion-button routerLink="/putventa/{{venta.Id}}" class="colores" expand="block">Editar</ion-button>
+</div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="txt">Brenda Azucena</ion-title>
+  </ion-toolbar>
+</ion-footer>

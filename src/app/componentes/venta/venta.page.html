@@ -1,0 +1,40 @@
+<ion-header class="ion-no-border" >
+  <ion-toolbar class="background-color">
+    <ion-title class="ion-text-center"><b><i>Ventas</i></b></ion-title>
+    <ion-buttons slot="start">
+      <ion-button href="../principal">
+        <ion-icon name="chevron-back-outline" class="flecha"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <br>
+<ion-card>
+  
+      <ion-item *ngFor="let Venta of Ventas ; let i=index" detail>
+        <ion-label routerLink="/venta/{{Venta.Id}}">
+          <p>{{Venta.Cantidad}}</p>
+          <p>{{Venta.factura_Id}}</p>
+        </ion-label>
+        <ion-buttons slot="start">
+          <ion-button (click)="eliminar(Venta,i)" expand="block" class="eliminar">
+            <ion-icon slot="icon-only" name="trash"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-item>
+
+  </ion-card>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button class="colores" (click)="agregar()">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="txt">Brenda Azucena</ion-title>
+  </ion-toolbar>
+</ion-footer>

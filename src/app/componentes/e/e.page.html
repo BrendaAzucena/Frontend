@@ -1,0 +1,43 @@
+<ion-header class="ion-no-border" >
+  <ion-toolbar class="background-color">
+    <ion-title class="ion-text-center"><b><i>Cliente</i></b></ion-title>
+    <ion-buttons slot="start">
+      <ion-button href="../cliente">
+        <ion-icon name="chevron-back-outline" class="flecha"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="cliente">
+<br>
+<ion-card>
+  <ion-item>
+  <h3 >{{ cliente.Nombre}}</h3>
+  </ion-item>
+  <br>
+  <ion-item>
+    <h3>{{ cliente.Apellidos }}</h3>
+  </ion-item>
+  <br>
+  <ion-item>
+    <h3>{{ cliente.Telefono }}</h3>
+  </ion-item>
+  <br>
+  <ion-item>
+    <h3>{{ cliente.Direccion }}</h3>
+  </ion-item>
+</ion-card>
+
+ <div class="ion-padding">
+  <ion-button routerLink="/putcliente/{{cliente.Id}}" class="colores" expand="block">Editar</ion-button>
+</div> 
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="txt">Brenda Azucena</ion-title>
+  </ion-toolbar>
+</ion-footer>
+

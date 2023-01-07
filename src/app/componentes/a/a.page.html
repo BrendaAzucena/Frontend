@@ -1,0 +1,37 @@
+<ion-header class="ion-no-border" >
+  <ion-toolbar class="background-color">
+    <ion-title class="ion-text-center"><b><i>Cliente</i></b></ion-title>
+    <ion-buttons slot="start">
+      <ion-button href="../cliente">
+        <ion-icon name="chevron-back-outline" class="flecha"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<br>
+
+<ion-content>
+<ion-row>
+  <ion-col >
+    <ion-card>
+      <ion-card-content>
+        <ion-label type="text" #Id></ion-label>
+        <ion-label>Nombre:</ion-label>
+        <ion-input type="text" #Nombre [clearInput]="true" required></ion-input>
+        <ion-label>Apellidos:</ion-label>
+        <ion-input type="text" #Apellidos [clearInput]="true" required></ion-input>
+        <ion-label>Telefono:</ion-label>
+        <ion-input type="text" #Telefono [clearInput]="true" required></ion-input>
+        <ion-label>Direccion:</ion-label>
+        <ion-input type="text" #Direccion [clearInput]="true" required></ion-input>
+
+        <ion-button (click)="agregarCliente(Id, Nombre, Apellidos, Telefono, Direccion)" expand="block" class="colores">
+          Guardar
+        </ion-button>
+        
+      </ion-card-content>
+    </ion-card>
+  </ion-col>
+</ion-row>
+</ion-content>

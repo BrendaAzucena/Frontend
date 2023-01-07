@@ -1,0 +1,47 @@
+<ion-header class="ion-no-border" >
+  <ion-toolbar class="background-color">
+    <ion-title class="ion-text-center"><b><i>Proveedor</i></b></ion-title>
+    <ion-buttons slot="start">
+      <ion-button href="../proveedor">
+        <ion-icon name="chevron-back-outline" class="flecha"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content *ngIf="proveedor">
+
+<br>
+
+<ion-card>
+
+  <ion-item>
+  <h3>{{ proveedor.Nombre}}</h3>
+  </ion-item>
+  <br>
+  <ion-item>
+    <h3>{{ proveedor.Apellidos }}</h3>
+  </ion-item>
+  <br>
+  <ion-item>
+    <h3>{{ proveedor.Telefono }}</h3>
+  </ion-item>
+
+  <br>
+
+</ion-card>
+
+<div class="ion-padding">
+  <ion-button routerLink="/putproveedor/{{proveedor.Id}}" class="colores" expand="block">
+    Editar
+  </ion-button>
+</div> 
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="txt">Brenda Azucena</ion-title>
+  </ion-toolbar>
+</ion-footer>

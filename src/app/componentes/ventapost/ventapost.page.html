@@ -1,0 +1,33 @@
+<ion-header class="ion-no-border" >
+  <ion-toolbar class="background-color">
+    <ion-title class="ion-text-center"><b><i>Venta</i></b></ion-title>
+    <ion-buttons slot="start">
+      <ion-button href="../venta">
+        <ion-icon name="chevron-back-outline" class="flecha"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-row>
+  <ion-col >
+    <ion-card>
+      <ion-card-content>
+        <ion-label type="text" #Id></ion-label>
+        <ion-label>Cantidad:</ion-label>
+        <ion-input type="text" #Cantidad [clearInput]="true" required></ion-input>
+
+        <ion-label>Id Factura</ion-label>
+        <ion-select [(ngModel)]="venta.factura_Id" #factura_id> 
+        <ion-select-option *ngFor="let Factura of fact" [value]="Factura.Id">{{ Factura.Fecha }}</ion-select-option>
+       </ion-select>
+
+        <ion-button (click)=" agregarventa(Id, Cantidad, factura_id)" expand="block" class="colores">
+          Guardar
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-col>
+</ion-row>
+</ion-content>

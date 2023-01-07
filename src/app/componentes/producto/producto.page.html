@@ -1,0 +1,43 @@
+<ion-header class="ion-no-border" >
+  <ion-toolbar class="background-color">
+    <ion-title class="ion-text-center"><b><i>Productos</i></b></ion-title>
+    <ion-buttons slot="start">
+      <ion-button href="../principal">
+        <ion-icon name="chevron-back-outline" class="flecha"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <br>
+<ion-card>
+    
+      <ion-item *ngFor="let Procducto of Productos ; let i= index" detail>
+        <ion-label routerLink="/producto/{{Procducto.Id}}">
+          <p>{{Procducto.Precio}}</p>
+          <p>{{Procducto.Descripcion}}</p>
+          <p>{{Procducto.Categoria}}</p>
+          <p>{{Procducto.proveedores_Id}}</p>
+          <p  value="Procducto.Id">{{Procducto.Nombre}}</p>
+        </ion-label>
+        <ion-buttons slot="start">
+          <ion-button class="eliminar" (click)="eliminar(Procducto, i)" class="eliminar">
+            <ion-icon slot="icon-only" name="trash"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-item>
+    
+  </ion-card>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button class="colores" (click)="agregar()">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="txt">Brenda Azucena</ion-title>
+  </ion-toolbar>
+</ion-footer>

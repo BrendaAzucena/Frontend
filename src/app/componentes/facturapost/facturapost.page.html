@@ -1,0 +1,43 @@
+<ion-header class="ion-no-border" >
+  <ion-toolbar class="background-color">
+    <ion-title class="ion-text-center"><b><i>Factura</i></b></ion-title>
+    <ion-buttons slot="start">
+      <ion-button href="../factura">
+        <ion-icon name="chevron-back-outline" class="flecha"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<br>
+
+<ion-content>
+<ion-row>
+  <ion-col >
+    <ion-card>
+      <ion-card-content>
+        <ion-label type="text" #Id></ion-label>
+          <ion-label>Fecha:</ion-label>
+         <ion-input type="text" #Fecha [clearInput]="true" required></ion-input>
+        <ion-label>Descuento:</ion-label>
+        <ion-input type="text" #Descuento [clearInput]="true" required></ion-input>
+        <ion-label>Cantidad:</ion-label>
+        <ion-input type="text" #Cantidad [clearInput]="true" required></ion-input>
+        <ion-label>Id Cliente</ion-label>
+          <ion-select [(ngModel)]="factura.cliente_Id" name="cliente_Id" #Nombre #cliente_Id>
+              <ion-select-option *ngFor="let cliente of clientes" [value]="cliente.Id">{{ cliente.Nombre }}</ion-select-option>
+           </ion-select>
+        <ion-button (click)="agregarFactura(Id, Fecha, Descuento, Cantidad, cliente_Id)" expand="block" class="colores">
+          Guardar
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-col>
+</ion-row>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="txt">Brenda Azucena</ion-title>
+  </ion-toolbar>
+</ion-footer>

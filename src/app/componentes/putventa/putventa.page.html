@@ -1,0 +1,43 @@
+<ion-header class="ion-no-border" >
+  <ion-toolbar class="background-color">
+    <ion-title class="ion-text-center"><b><i>Editar Venta</i></b></ion-title>
+    <ion-buttons slot="start">
+      <ion-button href="../venta">
+        <ion-icon name="chevron-back-outline" class="flecha"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<br>
+
+ <ion-content class="ion-padding">
+   <form #formulario="ngForm"  (ngSubmit)="cambios()">
+    <ion-card>
+
+    <ion-item>
+      <ion-label position="floating">Cantidad</ion-label>
+      <ion-input type="text" [(ngModel)]="venta.Cantidad" name="Cantidad" [clearInput]="true" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Factura Id</ion-label>
+        <ion-select [(ngModel)]="venta.factura_Id" name="factura_Id">
+          <ion-select-option *ngFor="let factura of facturas" [value]="factura.Id">{{ factura.Fecha }}</ion-select-option>
+        </ion-select>
+    </ion-item> 
+
+  </ion-card>
+    <br>
+<ion-button type="submit" expand="block" [disabled]="formulario.invalid" class="colores">
+Guardar Cambios
+</ion-button>
+
+  </form>
+ </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="txt">Brenda Azucena</ion-title>
+  </ion-toolbar>
+</ion-footer>

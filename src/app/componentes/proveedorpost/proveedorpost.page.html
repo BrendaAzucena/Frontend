@@ -1,0 +1,32 @@
+<ion-header class="ion-no-border" >
+  <ion-toolbar class="background-color">
+    <ion-title class="ion-text-center"><b><i>Proveedor</i></b></ion-title>
+    <ion-buttons slot="start">
+      <ion-button href="../proveedor">
+        <ion-icon name="chevron-back-outline" class="flecha"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-row>
+  <ion-col >
+    <ion-card>
+      <ion-card-content>
+        <ion-label type="text" #Id></ion-label>
+        <ion-label>Nombre:</ion-label>
+        <ion-input type="text" #Nombre [clearInput]="true" required></ion-input>
+        <ion-label>Apellidos:</ion-label>
+        <ion-input type="text" #Apellidos [clearInput]="true" required></ion-input>
+        <ion-label>Telefono:</ion-label>
+        <ion-input type="text" #Telefono [clearInput]="true" required></ion-input>
+
+        <ion-button (click)="agregarProveedor(Id,Nombre,Apellidos,Telefono)" expand="block" class="colores">
+          Guardar
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-col>
+</ion-row>
+</ion-content>

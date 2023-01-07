@@ -1,0 +1,60 @@
+<ion-header class="ion-no-border" >
+  <ion-toolbar class="background-color">
+    <ion-title class="ion-text-center"><b><i>Editar Factura</i></b></ion-title>
+    <ion-buttons slot="start">
+      <ion-button href="../factura">
+        <ion-icon name="chevron-back-outline" class="flecha"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<br>
+
+ <ion-content class="ion-padding">
+   <form #formulario="ngForm"  (ngSubmit)="cambios()">
+
+  <ion-datetime-button datetime="datetime"></ion-datetime-button>
+   <ion-modal [keepContentsMounted]="true">
+     <ng-template>
+       <ion-datetime id="datetime" [(ngModel)]="factura.Fecha" name="Fecha" required [showDefaultButtons]="true"
+       doneText="Aceptar" cancelText="Cancelar"></ion-datetime>
+       <ion-buttons slot="buttons">
+       
+      </ion-buttons>
+     </ng-template>
+   </ion-modal>
+    <ion-card>
+
+    <ion-item>
+      <ion-label position="floating">Descuento</ion-label>
+      <ion-input type="text" [(ngModel)]="factura.Descuento" name="Descuento" [clearInput]="true" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Cantidad</ion-label>
+      <ion-input type="text" [(ngModel)]="factura.Cantidad" name="Cantidad" [clearInput]="true" required></ion-input>
+    </ion-item>
+
+   <ion-item>
+      <ion-label>Id Cliente</ion-label>
+        <ion-select [(ngModel)]="factura.cliente_Id" name="cliente_Id">
+          <ion-select-option *ngFor="let cliente of clientes" [value]="cliente.Id">{{ cliente.Nombre }}</ion-select-option>
+        </ion-select>
+    </ion-item> 
+
+    
+  </ion-card>
+    <br>
+<ion-button type="submit" expand="block" [disabled]="formulario.invalid" class="colores">
+Guardar Cambios
+</ion-button>
+
+  </form>
+ </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="txt">Brenda Azucena</ion-title>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,50 @@
+<ion-header class="ion-no-border" >
+  <ion-toolbar class="background-color">
+    <ion-title class="ion-text-center"><b><i>Producto</i></b></ion-title>
+    <ion-buttons slot="start">
+      <ion-button href="../producto">
+        <ion-icon name="chevron-back-outline" class="flecha"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-row>
+  <ion-col >
+    <ion-card>
+      <ion-card-content>
+        <ion-label type="text" #Id></ion-label>
+        <ion-label>Precio:</ion-label>
+        <ion-input type="text" [clearInput]="true" #Precio required></ion-input>
+        <ion-label>Descripcion:</ion-label>
+        <ion-input type="text" [clearInput]="true" #Descripcion required></ion-input>
+        <ion-label>Categoria:</ion-label>
+          <ion-select #Categoria required>
+            <ion-select-option value="Papeleria">Papeleria</ion-select-option>
+            <ion-select-option value="Electronico">Electronico</ion-select-option>
+            <ion-select-option value="Producto de limpieza">Producto de limpieza</ion-select-option>
+            <ion-select-option value="Frutas y verduras">Frutas y verduras</ion-select-option>
+            <ion-select-option value="Maquillaje">Maquillaje</ion-select-option>
+          </ion-select>
+     
+         
+        <ion-label>Id Proveedor</ion-label>
+        <ion-select [(ngModel)]="producto.proveedores_Id"  #proveedores_Id>
+            <ion-select-option *ngFor="let proveedor of proveedores" [value]="proveedor.Id">{{ proveedor.Nombre }}</ion-select-option>
+         </ion-select>
+
+        <ion-button (click)="agregarProducto(Id, Precio, Descripcion, Categoria, proveedores_Id)" expand="block" class="colores">
+          Guardar
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-col>
+</ion-row>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="txt">Brenda Azucena</ion-title>
+  </ion-toolbar>
+</ion-footer>

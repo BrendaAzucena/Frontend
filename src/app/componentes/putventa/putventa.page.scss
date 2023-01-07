@@ -1,0 +1,29 @@
+ion-item{
+    --highlight-height: 2px;
+    --highlight-color-focused: #43e7f3;
+    --highlight-color-valid: #6f58d8;
+    --highlight-color-invalid: #ff46be;
+  }
+  
+.background-color{
+    --background: linear-gradient(to bottom right, rgb(137, 255, 182),rgb(129, 101, 255));
+}
+
+.colores{
+    --background: linear-gradient(to bottom right, rgb(137, 255, 182),rgb(129, 101, 255));
+}
+
+.flecha{
+    color: rgb(104, 104, 104);
+}
+
+.crear{
+    --background: rgb(176, 255, 229);
+}
+
+.eliminar{
+    --background: rgb(153, 197, 255);
+}
+.txt{
+    color: rgb(0, 145, 182);
+}

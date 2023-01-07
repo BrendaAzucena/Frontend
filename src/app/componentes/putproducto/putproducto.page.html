@@ -1,0 +1,65 @@
+<ion-header class="ion-no-border" >
+  <ion-toolbar class="background-color">
+    <ion-title class="ion-text-center"><b><i>Editar Producto</i></b></ion-title>
+    <ion-buttons slot="start">
+      <ion-button href="../producto">
+        <ion-icon name="chevron-back-outline" class="flecha"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<br>
+
+ <ion-content class="ion-padding">
+
+  <form #formulario="ngForm" (ngSubmit)="guardar()">
+
+  <ion-card>
+
+    <ion-item >
+      <ion-label position="floating">Precio</ion-label>
+      <ion-input type="text" [(ngModel)]="producto.Precio"  name="Precio" [clearInput]="true" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Descripcion</ion-label>
+      <ion-input type="text" [(ngModel)]="producto.Descripcion"  name="Descripcion" [clearInput]="true" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Categoria</ion-label>
+      <ion-select [(ngModel)]="producto.Categoria" name="Categoria" required>
+        <ion-select-option value="Papeleria">Papeleria</ion-select-option>
+        <ion-select-option value="Electronico">Electronico</ion-select-option>
+        <ion-select-option value="Producto de limpieza">Producto de limpieza</ion-select-option>
+        <ion-select-option value="Frutas y verduras">Frutas y verduras</ion-select-option>
+        <ion-select-option value="Maquillaje">Maquillaje</ion-select-option>
+      </ion-select>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>Proveedor Id</ion-label>
+        <ion-select [(ngModel)]="producto.proveedores_Id"  name="proveedores_Id">
+          <ion-select-option *ngFor="let proveedor of proveedores" [value]="proveedor.Id">{{ proveedor.Nombre }}</ion-select-option>
+        </ion-select>
+    </ion-item> 
+
+  </ion-card>
+
+    <br>
+
+<ion-button type="submit" expand="block" class="colores" [disabled]="formulario.invalid">
+  Guardar Cambios
+</ion-button>
+
+  </form>
+  
+ </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="txt">Brenda Azucena</ion-title>
+  </ion-toolbar>
+</ion-footer>
+
